@@ -1,0 +1,12 @@
+spring:
+  sql:
+    init:
+      mode: always  # 컨테이너 DB를 사용해도 스크립트(schema.sql, data.sql)를 실행하도록 설정
+  docker:
+    compose:
+      lifecycle-management: start-and-stop
+      start:
+        command: up
+      stop:
+        command: down
+        timeout: 1m
